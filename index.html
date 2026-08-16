@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>波動・チャクラ調整指南｜遠隔ヒーリング×瞑想指導のご案内</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root{
+    --bg:#ffffff;
+    --surface:#ffffff;
+    --surface-soft:#faf9f7;
+    --border:#ececec;
+    --text:#2b2b2b;
+    --text-soft:#8a8a8a;
+    --accent:#b8935a;
+    --accent-soft:#f5ede0;
+    --line-green:#06c755;
+    --shadow:rgba(0,0,0,0.05);
+    --c1:#c98b7f; --c2:#cf9f68; --c3:#8caa97; --c4:#8b8fc4;
+  }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","游ゴシック体",sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.85;
+    padding-bottom:84px;
+  }
+  .wrap{ max-width:720px; margin:0 auto; padding:0 20px; }
+  section{ padding:60px 0; border-bottom:1px solid var(--border); }
+  section:last-of-type{ border-bottom:none; }
+  h2{ font-size:1.24rem; font-weight:700; margin-bottom:8px; letter-spacing:.02em; }
+  .section-eyebrow{ font-size:.72rem; letter-spacing:.2em; color:var(--accent); font-weight:700; margin-bottom:10px; }
+  .section-lead{ color:var(--text-soft); font-size:.9rem; margin-bottom:28px; }
+  p{ font-size:.92rem; }
+
+  /* Hero */
+  .hero{ padding:56px 0 46px; text-align:center; border-bottom:1px solid var(--border); }
+  .hero .section-eyebrow{ text-align:center; }
+  .hero h1{ font-size:1.85rem; font-weight:700; letter-spacing:.03em; margin-bottom:18px; line-height:1.5; }
+  .hero .lead{ color:var(--text-soft); font-size:.92rem; max-width:520px; margin:0 auto 14px; }
+  .hero .lead2{ color:var(--text); font-size:.88rem; max-width:520px; margin:0 auto 30px; }
+  .hero svg.aura{ width:200px; height:200px; margin:0 auto 28px; display:block; }
+  .cta-row{ display:flex; flex-direction:column; gap:10px; align-items:center; }
+
+  .btn-line{ display:inline-flex; align-items:center; justify-content:center; gap:8px; background:var(--line-green); color:#fff; font-weight:700; font-size:.98rem; padding:16px 32px; border-radius:30px; text-decoration:none; box-shadow:0 6px 16px rgba(6,199,85,.25); transition:.2s; }
+  .btn-line:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(6,199,85,.35); }
+  .btn-line svg{ width:20px; height:20px; }
+  .link-quiet{ font-size:.8rem; color:var(--text-soft); text-decoration:underline; text-underline-offset:3px; }
+
+  .tags{ display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:26px; }
+  .tag{ font-size:.76rem; color:var(--text); background:var(--surface-soft); border:1px solid var(--border); padding:6px 14px; border-radius:20px; }
+
+  .check-list{ list-style:none; display:flex; flex-direction:column; gap:16px; }
+  .check-list li{ display:flex; gap:12px; font-size:.9rem; align-items:flex-start; }
+  .check-list li::before{ content:"—"; color:var(--accent); font-weight:700; flex:none; }
+
+  .diagram{ background:var(--surface-soft); border:1px solid var(--border); border-radius:14px; padding:22px 16px; margin-bottom:26px; }
+  .diagram svg{ display:block; margin:0 auto; width:100%; max-width:260px; height:auto; }
+  .diagram-caption{ text-align:center; font-size:.76rem; color:var(--text-soft); margin-top:12px; }
+  .diagram-note{ text-align:center; font-size:.72rem; color:var(--text-soft); margin-top:4px; }
+
+  .flow-steps{ list-style:none; display:flex; flex-wrap:wrap; align-items:stretch; gap:0; }
+  .flow-steps li{ display:flex; align-items:center; gap:9px; padding:11px 16px 11px 0; flex:none; }
+  .flow-steps li:not(:last-child){ margin-right:14px; position:relative; }
+  .flow-steps li:not(:last-child)::after{ content:"›"; position:absolute; right:-8px; top:50%; transform:translateY(-50%); color:var(--border); font-size:1.1rem; font-weight:700; }
+  .flow-steps .num{ width:26px; height:26px; border-radius:50%; background:var(--accent-soft); color:var(--accent); font-size:.8rem; font-weight:700; display:flex; align-items:center; justify-content:center; flex:none; }
+  .flow-steps li:last-child .num{ background:var(--accent); color:#fff; }
+  .flow-steps .flow-label{ font-size:.86rem; font-weight:600; color:var(--text); white-space:nowrap; display:flex; flex-direction:column; line-height:1.3; }
+  .flow-steps .flow-label small{ font-size:.72rem; font-weight:500; color:var(--text-soft); }
+
+  details{ border:1px solid var(--border); border-radius:12px; margin-bottom:12px; overflow:hidden; background:var(--surface); }
+  summary{ list-style:none; cursor:pointer; padding:17px 20px; display:flex; align-items:center; justify-content:space-between; gap:12px; font-weight:700; font-size:.92rem; }
+  summary::-webkit-details-marker{ display:none; }
+  summary .dot{ width:10px; height:10px; border-radius:50%; flex:none; }
+  summary .label{ flex:1; }
+  summary .chevron{ flex:none; font-size:.9rem; color:var(--text-soft); transition:transform .25s; }
+  details[open] summary .chevron{ transform:rotate(180deg); }
+  .details-body{ padding:0 20px 20px; font-size:.86rem; color:var(--text); }
+  .details-body p{ margin-bottom:10px; }
+  .details-body ul{ list-style:none; display:flex; flex-direction:column; gap:12px; margin:4px 0 10px; }
+  .details-body ul li{ font-size:.86rem; }
+  .details-body ul li strong{ display:block; font-size:.88rem; margin-bottom:2px; color:var(--text); }
+  .details-body ul li span.d{ color:var(--text-soft); font-size:.82rem; }
+  .details-body .note{ font-size:.76rem; color:var(--text-soft); border-top:1px dashed var(--border); padding-top:10px; margin-top:6px; }
+
+  /* pillars */
+  .pillars{ display:flex; align-items:stretch; justify-content:center; gap:12px; flex-wrap:wrap; margin-bottom:6px; }
+  .pillar-card{ flex:1; min-width:150px; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:22px 16px; text-align:center; }
+  .pillar-card svg{ width:44px; height:44px; margin:0 auto 10px; display:block; }
+  .pillar-card h4{ font-size:.92rem; margin-bottom:6px; }
+  .pillar-card p{ font-size:.78rem; color:var(--text-soft); line-height:1.7; }
+  .pillar-plus{ font-size:1.4rem; color:var(--accent); font-weight:700; display:flex; align-items:center; }
+
+  /* course cards */
+  .course-card{ border:1px solid var(--border); border-radius:14px; padding:24px 22px; margin-bottom:18px; }
+  .course-card.popular{ border-color:var(--accent); background:var(--accent-soft); position:relative; }
+  .course-badge{ display:inline-block; font-size:.7rem; font-weight:700; color:#fff; background:var(--accent); padding:3px 12px; border-radius:12px; margin-bottom:10px; }
+  .course-card h3{ font-size:1.02rem; margin-bottom:10px; }
+  .course-meta{ font-size:.82rem; color:var(--text-soft); margin-bottom:10px; }
+  .course-meta div{ margin-bottom:4px; }
+  .course-for{ font-size:.82rem; }
+
+  .voice-name{ font-size:.78rem; color:var(--text-soft); margin-bottom:6px; }
+  .voice-text{ font-size:.88rem; }
+  summary .voice-meta{ display:block; font-size:.72rem; font-weight:500; color:var(--text-soft); margin-top:3px; }
+
+  .author{ display:flex; gap:16px; align-items:flex-start; }
+  .author-badge{ width:64px; height:64px; border-radius:50%; flex:none; overflow:hidden; border:1px solid var(--border); }
+  .author-badge img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .author-text{ font-size:.86rem; color:var(--text); }
+  .author-text strong{ display:block; font-size:.96rem; margin-bottom:6px; }
+
+  .disclaimer{ font-size:.78rem; color:var(--text-soft); background:var(--surface-soft); border-radius:10px; padding:20px; }
+  .disclaimer p{ margin-bottom:10px; font-size:.78rem; }
+  .disclaimer p:last-child{ margin-bottom:0; }
+
+  .final-cta{ text-align:center; }
+  .final-cta h2{ font-size:1.35rem; }
+  .final-cta .section-lead{ max-width:480px; margin-left:auto; margin-right:auto; }
+
+  .sticky-bar{ position:fixed; left:0; right:0; bottom:0; background:#fff; border-top:1px solid var(--border); padding:12px 20px; display:flex; justify-content:center; z-index:50; box-shadow:0 -4px 16px var(--shadow); }
+  .sticky-bar .btn-line{ width:100%; max-width:420px; padding:14px 20px; font-size:.92rem; }
+
+  footer.site-footer{ text-align:center; padding:32px 0 0; font-size:.72rem; color:var(--text-soft); }
+
+  @media (max-width:600px){
+    section{ padding:40px 0; }
+    .hero h1{ font-size:1.5rem; }
+    .pillars{ flex-direction:column; }
+    .pillar-plus{ justify-content:center; }
+    .diagram{ padding:18px 12px; }
+    .diagram svg{ max-width:235px; }
+    .flow-steps{ flex-direction:column; align-items:flex-start; gap:2px; }
+    .flow-steps li{ padding:7px 0; margin-right:0; }
+    .flow-steps li:not(:last-child)::after{ content:""; position:static; display:none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap hero">
+  <div class="section-eyebrow">REMOTE HEALING &amp; MEDITATION GUIDE</div>
+  <h1>波動・チャクラ調整指南</h1>
+  <p class="lead">眠れない夜、抜けない疲れ、晴れない気持ち。薬に頼らず、遠隔ヒーリングと瞑想指導で「整える」に向き合う。</p>
+  <p class="lead2">病院では「異常なし」と言われるのに、不調がずっと続いている。心療内科でお薬をもらったけれど、根本的には何も変わっていない気がする——そんな「どこにも当てはまらない不調」に、波動・チャクラ調整はもう一つの向き合い方を提案します。</p>
+
+  <svg class="aura" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="波動が整った状態を表す、同心円と方位ラインのシンボルマーク">
+    <circle cx="110" cy="110" r="95" fill="none" stroke="var(--border)" stroke-width="1.2"/>
+    <circle cx="110" cy="110" r="70" fill="none" stroke="var(--accent-soft)" stroke-width="1.2"/>
+    <g stroke="var(--accent)" stroke-width="1.1" opacity=".65">
+      <line x1="110" y1="14" x2="110" y2="22"/>
+      <line x1="110" y1="198" x2="110" y2="206"/>
+      <line x1="14" y1="110" x2="22" y2="110"/>
+      <line x1="198" y1="110" x2="206" y2="110"/>
+      <line x1="42.1" y1="42.1" x2="47.8" y2="47.8"/>
+      <line x1="172.2" y1="172.2" x2="177.9" y2="177.9"/>
+      <line x1="177.9" y1="42.1" x2="172.2" y2="47.8"/>
+      <line x1="47.8" y1="172.2" x2="42.1" y2="177.9"/>
+    </g>
+    <circle cx="110" cy="40" r="3" fill="var(--accent)"/>
+    <circle cx="49.4" cy="145" r="2.6" fill="var(--accent)" opacity=".8"/>
+    <circle cx="170.6" cy="145" r="2.6" fill="var(--accent)" opacity=".8"/>
+    <circle cx="110" cy="110" r="14" fill="none" stroke="var(--accent)" stroke-width="1.3"/>
+    <circle cx="110" cy="110" r="4" fill="var(--accent)"/>
+  </svg>
+
+  <div class="cta-row">
+    <a class="btn-line" href="https://lin.ee/WP17gww" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 5.94 2 10.7c0 4.24 3.6 7.8 8.45 8.51.33.07.78.22.9.5.1.26.07.66.03.92l-.15.9c-.04.26-.2 1.02.9.56s5.9-3.48 8.06-5.95C21.6 14.02 22 12.4 22 10.7 22 5.94 17.52 2 12 2z"/></svg>
+      LINEで無料相談する
+    </a>
+    <a class="link-quiet" href="#program">瞑想指導の内容を見る ↓</a>
+  </div>
+
+  <div class="tags">
+    <span class="tag">不眠</span>
+    <span class="tag">慢性的なだるさ</span>
+    <span class="tag">緊張・こわばり</span>
+    <span class="tag">気分の落ち込み</span>
+    <span class="tag">漠然とした不安</span>
+    <span class="tag">自律神経の乱れ</span>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-eyebrow">SIGNS</div>
+    <h2>こんな不調に心当たりはありませんか</h2>
+    <p class="section-lead">一つひとつは軽く見えても、積み重なると心も体も静かに消耗していきます。</p>
+    <ul class="check-list">
+      <li>布団に入ってもなかなか寝つけない、眠りが浅くてすぐ目が覚める</li>
+      <li>朝から体が重く、休んでも疲れが抜けない</li>
+      <li>些細なことでイライラしたり、涙が出たりする日が増えた</li>
+      <li>検査では原因がわからないのに、腰や体のこわばりが続いている</li>
+      <li>「気にしすぎ」「そのうち治る」と言われ続けて、心も体も限界に近い</li>
+    </ul>
+  </div>
+</section>
+
+<section id="layers">
+  <div class="wrap">
+    <div class="section-eyebrow">4 LAYERS OF ENERGY</div>
+    <h2>なぜ「波動・チャクラ」から整えるのか</h2>
+    <p class="section-lead">人には、目に見える「肉体」だけでなく、目には見えないエネルギーの層があると言われています。不調はこの4つの層のどこかにエネルギーが滞ることで起きると考えられており、表面的な症状だけを追いかけても、根本の滞りが残っていると不調は繰り返してしまいます。</p>
+
+    <div class="diagram">
+      <svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="肉体を中心に、エーテル体・感情体・メンタル体が同心円状に重なる図">
+        <circle cx="160" cy="160" r="135" fill="none" stroke="var(--c4)" stroke-width="1.3"/>
+        <circle cx="160" cy="160" r="100" fill="none" stroke="var(--c3)" stroke-width="1.3"/>
+        <circle cx="160" cy="160" r="65" fill="none" stroke="var(--c2)" stroke-width="1.3"/>
+        <circle cx="160" cy="160" r="30" fill="none" stroke="var(--c1)" stroke-width="1.3"/>
+        <circle cx="160" cy="25" r="3" fill="var(--c4)"/>
+        <circle cx="160" cy="60" r="3" fill="var(--c3)"/>
+        <circle cx="160" cy="95" r="3" fill="var(--c2)"/>
+        <circle cx="160" cy="130" r="3" fill="var(--c1)"/>
+        <circle cx="160" cy="160" r="3.5" fill="var(--text)"/>
+        <text x="160" y="20" text-anchor="middle" font-size="11.5" font-weight="600" letter-spacing=".02em" fill="var(--c4)">メンタル体</text>
+        <text x="160" y="55" text-anchor="middle" font-size="11.5" font-weight="600" letter-spacing=".02em" fill="var(--c3)">感情体</text>
+        <text x="160" y="90" text-anchor="middle" font-size="11.5" font-weight="600" letter-spacing=".02em" fill="var(--c2)">エーテル体</text>
+        <text x="160" y="178" text-anchor="middle" font-size="11" font-weight="600" letter-spacing=".02em" fill="var(--text)">肉体</text>
+      </svg>
+      <div class="diagram-caption">内側から「肉体・エーテル体・感情体・メンタル体」の順に重なっています</div>
+    </div>
+
+    <details>
+      <summary><span class="dot" style="background:var(--c1)"></span><span class="label">肉体</span><span class="chevron">▾</span></summary>
+      <div class="details-body"><p>目に見える、カラダそのものの層です。ここに現れる緊張やこわばりは、多くの場合、もっと外側の層で起きていることの「結果」として表れると考えられています。</p></div>
+    </details>
+    <details>
+      <summary><span class="dot" style="background:var(--c2)"></span><span class="label">エーテル体</span><span class="chevron">▾</span></summary>
+      <div class="details-body"><p>肉体からおよそ30cmほどの厚みで、肉体を包む「生命エネルギー」の層です。子どもの頃は真冬でも薄着で平気だったのに、大人になるにつれ厚着や靴下が手放せなくなる——それは、この層の力が少しずつ弱まっていくことも一因だと言われています。</p></div>
+    </details>
+    <details>
+      <summary><span class="dot" style="background:var(--c3)"></span><span class="label">感情体</span><span class="chevron">▾</span></summary>
+      <div class="details-body"><p>喜びや悲しみといった感情が宿る層です。声に出す、出さないに関わらず、心の中で感じた感情は、この層に静かに積み重なっていくと言われています。</p></div>
+    </details>
+    <details>
+      <summary><span class="dot" style="background:var(--c4)"></span><span class="label">メンタル体</span><span class="chevron">▾</span></summary>
+      <div class="details-body"><p>思考や価値観、これまでの経験からできた「考え方のクセ」が宿る層です。ここに長く残っていた緊張がやわらぐと、繰り返してきた思考のパターンから、少しずつ自由になれることがあります。</p></div>
+    </details>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-eyebrow">TWO PILLARS</div>
+    <h2>「遠隔ヒーリング」と「瞑想指導」、2つの柱で整える</h2>
+    <p class="section-lead">施術は、この2本柱で進みます。一度の施術に頼るのではなく、「整った状態を保つ力」まで身につけていただくのが特徴です。</p>
+
+    <div class="pillars">
+      <div class="pillar-card">
+        <svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="放射する光のマーク">
+          <g stroke="var(--c2)" stroke-width="1.6" stroke-linecap="round">
+            <line x1="22" y1="4" x2="22" y2="13"/>
+            <line x1="22" y1="31" x2="22" y2="40"/>
+            <line x1="4" y1="22" x2="13" y2="22"/>
+            <line x1="31" y1="22" x2="40" y2="22"/>
+            <line x1="9.3" y1="9.3" x2="15.6" y2="15.6"/>
+            <line x1="28.4" y1="28.4" x2="34.7" y2="34.7"/>
+            <line x1="34.7" y1="9.3" x2="28.4" y2="15.6"/>
+            <line x1="15.6" y1="28.4" x2="9.3" y2="34.7"/>
+          </g>
+          <circle cx="22" cy="22" r="6.5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.4"/>
+        </svg>
+        <h4>遠隔ヒーリング</h4>
+        <p>電話・LINE通話で、その場にいなくてもカラダの微細な反応を確認しながらエネルギーを調整します。</p>
+      </div>
+      <div class="pillar-plus">＋</div>
+      <div class="pillar-card">
+        <svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="蓮の花のマーク">
+          <g stroke="var(--c3)" stroke-width="1.3" fill="var(--c3)" fill-opacity=".12">
+            <path d="M22,38 C16,30 16,16 22,10 C28,16 28,30 22,38 Z"/>
+            <g transform="rotate(-28 22 38)"><path d="M22,38 C16,30 16,16 22,10 C28,16 28,30 22,38 Z"/></g>
+            <g transform="rotate(28 22 38)"><path d="M22,38 C16,30 16,16 22,10 C28,16 28,30 22,38 Z"/></g>
+            <g transform="rotate(-52 22 38)"><path d="M22,38 C17,31 17,20 22,15 C27,20 27,31 22,38 Z"/></g>
+            <g transform="rotate(52 22 38)"><path d="M22,38 C17,31 17,20 22,15 C27,20 27,31 22,38 Z"/></g>
+          </g>
+          <circle cx="22" cy="38" r="2" fill="var(--c3)"/>
+        </svg>
+        <h4>瞑想指導</h4>
+        <p>ご自身でも波動を整えられるよう、感情や思考のクセに向き合う瞑想・セルフワークをお伝えします。</p>
+      </div>
+    </div>
+    <p class="diagram-note">2つを組み合わせることで、セッションの効果をその場限りにせず、日常の中で保っていく土台をつくります。</p>
+  </div>
+</section>
+
+<section id="scale">
+  <div class="wrap">
+    <div class="section-eyebrow">EMOTIONAL GUIDANCE SCALE</div>
+    <h2>感情には「高さ」がある</h2>
+    <p class="section-lead">私たちが日々感じる感情には、軽やかで広がるようなものから、重く縮こまるようなものまで、いわば「高さ」があると言われています。アメリカの著述家エスター・ヒックス氏が紹介した「感情のガイダンス・スケール」という考え方では、感情はおよそ22の段階に分けられ、上にいくほど波動が軽く高い状態、下にいくほど波動が重く低い状態を表すとされています。</p>
+
+    <div class="diagram">
+      <svg viewBox="0 0 320 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="感情を高い波動から低い波動まで並べたスケール図">
+        <defs>
+          <linearGradient id="scaleGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#f0d9a3"/>
+            <stop offset="30%" stop-color="var(--c2)"/>
+            <stop offset="55%" stop-color="var(--c3)"/>
+            <stop offset="80%" stop-color="var(--c4)"/>
+            <stop offset="100%" stop-color="#5d5480"/>
+          </linearGradient>
+        </defs>
+        <text x="28" y="16" text-anchor="middle" font-size="10" fill="var(--accent)" font-weight="700" letter-spacing=".08em">HIGH</text>
+        <path d="M22,22 L28,14 L34,22 Z" fill="var(--accent)"/>
+        <rect x="22" y="28" width="12" height="326" rx="6" fill="url(#scaleGrad)"/>
+        <path d="M22,360 L28,368 L34,360 Z" fill="#5d5480"/>
+        <text x="28" y="384" text-anchor="middle" font-size="10" fill="var(--text-soft)" font-weight="700" letter-spacing=".08em">LOW</text>
+        <g font-size="12" fill="var(--text)">
+          <line x1="34" y1="38" x2="46" y2="38" stroke="var(--text)" stroke-width="1.2"/>
+          <text x="54" y="42" font-weight="700">喜び・感謝・自由</text>
+          <line x1="34" y1="78" x2="46" y2="78" stroke="var(--text-soft)" stroke-width="1"/>
+          <text x="54" y="82" fill="var(--text-soft)">情熱・意欲</text>
+          <line x1="34" y1="118" x2="46" y2="118" stroke="var(--text-soft)" stroke-width="1"/>
+          <text x="54" y="122" fill="var(--text-soft)">前向きな期待</text>
+          <line x1="34" y1="158" x2="46" y2="158" stroke="var(--text-soft)" stroke-width="1"/>
+          <text x="54" y="162" fill="var(--text-soft)">楽観・希望</text>
+          <line x1="34" y1="198" x2="46" y2="198" stroke="var(--text)" stroke-width="1.2"/>
+          <text x="54" y="202">満足（中間点）</text>
+          <line x1="34" y1="238" x2="46" y2="238" stroke="var(--text-soft)" stroke-width="1"/>
+          <text x="54" y="242" fill="var(--text-soft)">もどかしさ・悲観</text>
+          <line x1="34" y1="278" x2="46" y2="278" stroke="var(--text-soft)" stroke-width="1"/>
+          <text x="54" y="282" fill="var(--text-soft)">心配・落胆</text>
+          <line x1="34" y1="318" x2="46" y2="318" stroke="var(--text-soft)" stroke-width="1"/>
+          <text x="54" y="322" fill="var(--text-soft)">怒り・嫉妬</text>
+          <line x1="34" y1="354" x2="46" y2="354" stroke="var(--text)" stroke-width="1.2"/>
+          <text x="54" y="358" font-weight="700">恐れ・無力感</text>
+        </g>
+      </svg>
+      <div class="diagram-caption">上にいくほど軽く高い波動、下にいくほど重く低い波動を表すとされています</div>
+      <div class="diagram-note">※22段階の一部を、代表的な言葉で簡略化してご紹介しています</div>
+    </div>
+
+    <p>大切なのは、重い感情から一気に「喜び」へジャンプしようとしないことです。今感じている感情の、すぐ一つ上の段階を目指して一段ずつ上がっていく——瞑想指導でお伝えしているワークの多くは、この「一段ずつ」を助けるためのものです。</p>
+  </div>
+</section>
+
+<section id="program">
+  <div class="wrap">
+    <div class="section-eyebrow">MEDITATION GUIDANCE</div>
+    <h2>瞑想指導でお伝えしている内容</h2>
+    <p class="section-lead">感情や思考のクセに一つずつ向き合うことで、波動が整った状態を、施術後もご自身で保てるようになっていきます。実際にお伝えしているワークの一部を、具体的にご紹介します。</p>
+
+    <details open>
+      <summary><span class="dot" style="background:var(--c2)"></span><span class="label">自分と向き合うワーク</span><span class="chevron">▾</span></summary>
+      <div class="details-body">
+        <ul>
+          <li><strong>自己実現セルフワーク</strong><span class="d">頭で「やりたい」と思っていることと、心の奥で本当に望んでいることのズレを、質問シートを使って一つずつ言語化していきます。</span></li>
+          <li><strong>インナーチャイルドヒーリングワーク</strong><span class="d">忘れていたはずの子どもの頃の記憶や感情に、瞑想を通してそっと立ち返り、当時の自分に必要だった言葉をかけ直します。</span></li>
+          <li><strong>チャクラクリーニング</strong><span class="d">セッションの前に、簡単な呼吸法とイメージワークでエネルギーの通り道を整えます。</span></li>
+          <li><strong>ブループリント書き換えワーク</strong><span class="d">同じパターンで悩みを繰り返してしまう「思考と感情の設計図」を、紙に書き出しながら見直します。</span></li>
+          <li><strong>タイムライン書き換えワーク</strong><span class="d">過去の出来事の捉え方を、瞑想の中で少しずつ書き換えていきます。</span></li>
+          <li><strong>セイクリッドアクティベーション（セルフ版）</strong><span class="d">豊かさや心地よさを受け取ることへの無意識の抵抗に、瞑想を通して気づき、手放していきます。</span></li>
+        </ul>
+      </div>
+    </details>
+    <details>
+      <summary><span class="dot" style="background:var(--c3)"></span><span class="label">感情を手放すワーク</span><span class="chevron">▾</span></summary>
+      <div class="details-body">
+        <ul>
+          <li><strong>フィアリリース・コントロール瞑想</strong><span class="d">恐れの感情を抑え込むのではなく、安全さを感じながら少しずつ手放していく瞑想法です。</span></li>
+          <li><strong>フィールリリースワークシート</strong><span class="d">その日感じた感情をシートに書き出し、しっかり感じ切ってから手放す練習をします。</span></li>
+          <li><strong>毎回の記録と感情解放</strong><span class="d">セッションごとの変化をご自身で記録し、感情の動きを客観的に振り返れるようにします。</span></li>
+          <li><strong>寄り添いワークシート</strong><span class="d">自分自身の気持ちに、他人事のようにではなく、そっと寄り添う練習をするシートです。</span></li>
+          <li><strong>インナーチャイルドへの言葉掛け</strong><span class="d">かつて欲しかった言葉を、今の自分から過去の自分にかけ直すワークです。</span></li>
+          <li><strong>セルフハグ</strong><span class="d">自分で自分を抱きしめる、シンプルながら効果を感じやすいセルフケアです。</span></li>
+        </ul>
+        <p class="note">相談者へ寄り添う前に、まず自分の感情を理解し、他人の感情に引っ張られすぎない状態をつくることを大切にしています。</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-eyebrow">FOR PRACTITIONERS</div>
+    <h2>施術者自身の波動を整える、2つの専門的アプローチ</h2>
+    <p class="section-lead">波動・チャクラ調整は、施術する側の状態にも大きく左右されます。ここでは、施術者自身が自分の波動を保つために実践している、代表的な2つのアプローチをご紹介します。</p>
+
+    <div class="pillars">
+      <div class="pillar-card">
+        <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="地面に根を張るグラウンディングのマーク">
+          <line x1="22" y1="9" x2="22" y2="24" stroke="var(--c1)" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M22 24 C19 29 16 32 13 38 M22 24 C22 30 22 34 22 40 M22 24 C25 29 28 32 31 38" stroke="var(--c1)" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="22" cy="9" r="4.5" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.3"/>
+        </svg>
+        <h4>グラウンディング＆クリアリング</h4>
+        <p>セッション前後に、足の裏から根が伸びるイメージや流水で手を洗うなどして、その都度エネルギーをリセットします。</p>
+      </div>
+      <div class="pillar-plus">＋</div>
+      <div class="pillar-card">
+        <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="穏やかな呼吸を表す波形のマーク">
+          <path d="M4,22 C8,10 13,10 17,22 C21,34 25,34 29,22 C33,10 37,10 41,22" stroke="var(--c3)" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <h4>ブレスワークによるセンタリング瞑想</h4>
+        <p>セッション前に呼吸法で自律神経を落ち着け、意識的に波動の高い状態でセッションに臨みます。</p>
+      </div>
+    </div>
+    <p class="diagram-note">施術者自身が整った状態でいることが、遠隔ヒーリングの質に直結すると考えています。</p>
+  </div>
+</section>
+
+<section id="flow">
+  <div class="wrap">
+    <div class="section-eyebrow">HOW IT WORKS</div>
+    <h2>遠隔ヒーリングの流れ</h2>
+    <p class="section-lead">特殊な道具は使わず、お話をうかがいながら遠隔でエネルギーを通していきます。決まった手順や時間はなく、その都度カラダに必要なことを優先しています。</p>
+
+    <ol class="flow-steps">
+      <li><span class="num">1</span><span class="flow-label">無料相談<small>LINE</small></span></li>
+      <li><span class="num">2</span><span class="flow-label">状態チェック<small>遠隔</small></span></li>
+      <li><span class="num">3</span><span class="flow-label">プランのご案内</span></li>
+      <li><span class="num">4</span><span class="flow-label">ヒーリング＆瞑想指導</span></li>
+      <li><span class="num">5</span><span class="flow-label">アフターフォロー</span></li>
+    </ol>
+  </div>
+</section>
+
+<section id="course">
+  <div class="wrap">
+    <div class="section-eyebrow">COURSE</div>
+    <h2>コースのご案内</h2>
+    <p class="section-lead">状態やご希望に合わせて、2つのコースをご用意しています。</p>
+
+    <div class="diagram">
+      <svg viewBox="0 0 320 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Aコースは4層のうち2層、Bコースは4層すべてにアプローチすることを示す円環図">
+        <text x="78" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="var(--text)">Aコース</text>
+        <text x="242" y="20" text-anchor="middle" font-size="13" font-weight="700" fill="var(--text)">Bコース</text>
+
+        <g stroke-width="12" stroke-linecap="round" fill="none">
+          <path d="M51.6,59.4 A42,42 0 0,1 104.4,59.4" stroke="var(--c1)"/>
+          <path d="M110.6,65.6 A42,42 0 0,1 110.6,118.4" stroke="var(--c2)"/>
+          <path d="M104.4,124.6 A42,42 0 0,1 51.6,124.6" stroke="var(--border)"/>
+          <path d="M45.4,118.4 A42,42 0 0,1 45.4,65.6" stroke="var(--border)"/>
+        </g>
+        <text x="78" y="87" text-anchor="middle" font-size="15" font-weight="700" fill="var(--text)">2</text>
+        <text x="78" y="101" text-anchor="middle" font-size="9" fill="var(--text-soft)">/ 4層</text>
+
+        <g stroke-width="12" stroke-linecap="round" fill="none">
+          <path d="M215.6,59.4 A42,42 0 0,1 268.4,59.4" stroke="var(--c1)"/>
+          <path d="M274.6,65.6 A42,42 0 0,1 274.6,118.4" stroke="var(--c2)"/>
+          <path d="M268.4,124.6 A42,42 0 0,1 215.6,124.6" stroke="var(--c3)"/>
+          <path d="M209.4,118.4 A42,42 0 0,1 209.4,65.6" stroke="var(--c4)"/>
+        </g>
+        <text x="242" y="87" text-anchor="middle" font-size="15" font-weight="700" fill="var(--text)">4</text>
+        <text x="242" y="101" text-anchor="middle" font-size="9" fill="var(--text-soft)">/ 4層</text>
+
+        <g font-size="10.5" fill="var(--text-soft)">
+          <circle cx="30" cy="150" r="4" fill="var(--c1)"/><text x="38" y="153">肉体</text>
+          <circle cx="90" cy="150" r="4" fill="var(--c2)"/><text x="98" y="153">エーテル体</text>
+          <circle cx="180" cy="150" r="4" fill="var(--c3)"/><text x="188" y="153">感情体</text>
+          <circle cx="248" cy="150" r="4" fill="var(--c4)"/><text x="256" y="153">メンタル体</text>
+        </g>
+      </svg>
+      <div class="diagram-caption">Aコースは肉体・エーテル体を中心に、Bコースは4つの層すべてに働きかけます</div>
+    </div>
+
+    <div class="course-card">
+      <h3>Aコース：波動・チャクラ調整（全2〜4回）</h3>
+      <div class="course-meta">
+        <div>対象：肉体・エーテル体を中心に</div>
+        <div>内容：1回90分程度 × 2〜4回、ご希望の日時でLINE電話にて遠隔調整</div>
+      </div>
+      <div class="course-for">まずは今の不調を軽くしたい方に。</div>
+    </div>
+    <div class="course-card popular">
+      <span class="course-badge">一番人気</span>
+      <h3>Bコース：波動調整＋瞑想指導プログラム（1〜2か月）</h3>
+      <div class="course-meta">
+        <div>対象：肉体・エーテル体・感情体・メンタル体のすべて</div>
+        <div>内容：1回90分程度 × 2回の遠隔ヒーリング＋瞑想指導プログラム付き。福岡近郊の方は対面でも対応可能。</div>
+      </div>
+      <div class="course-for">不調の「今」だけでなく、繰り返さないための土台まで整えたい方に。</div>
+    </div>
+    <p style="text-align:center; font-size:.82rem; color:var(--text-soft); margin-top:8px;">料金・お申込みの詳細はLINEにて個別にご案内しています。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-eyebrow">VOICE</div>
+    <h2>お客様の声</h2>
+    <p class="section-lead">いただいたお声の一部をご紹介します。効果には個人差があります。</p>
+
+    <details>
+      <summary><span class="label">感情の波が、少しずつ穏やかに<span class="voice-meta">20代女性</span></span><span class="chevron">▾</span></summary>
+      <div class="details-body"><p class="voice-text">「生理前になると涙もろくなったり、些細な一言でカッとなったりすることが続いていました。セッションを重ねるうちに、その波がきても以前よりずっと早く落ち着けるようになった気がしています。」</p></div>
+    </details>
+    <details>
+      <summary><span class="label">気づかなかった気持ちに、向き合えた<span class="voice-meta">50代女性</span></span><span class="chevron">▾</span></summary>
+      <div class="details-body"><p class="voice-text">「肩から首にかけての張りが何年も抜けず、マッサージに行ってもその場しのぎでした。自分の中の『許せない』という気持ちに向き合ってから、朝起きたときの重さが違うと感じています。」</p></div>
+    </details>
+    <details>
+      <summary><span class="label">眠れなかった夜が、深く眠れるように<span class="voice-meta">30代女性</span></span><span class="chevron">▾</span></summary>
+      <div class="details-body"><p class="voice-text">「ベッドに入っても考え事が止まらず、気づけば夜中の2時、3時ということが続いていました。セッションを重ねるうちに、横になってから眠りに落ちるまでの時間が、以前よりずっと短くなってきています。」</p></div>
+    </details>
+    <details>
+      <summary><span class="label">抜けなかった疲れが、軽くなった<span class="voice-meta">30代女性</span></span><span class="chevron">▾</span></summary>
+      <div class="details-body"><p class="voice-text">「朝、目覚まし前に体の重さで目が覚めてしまうくらい、疲れが抜けない時期がありました。まだ完全にとは言えませんが、瞑想指導のワークを続けるうちに、日中にふっと体が軽くなる瞬間が増えてきました。」</p></div>
+    </details>
+    <details>
+      <summary><span class="label">頭の締めつけが出る頻度が、減ってきた<span class="voice-meta">40代女性</span></span><span class="chevron">▾</span></summary>
+      <div class="details-body"><p class="voice-text">「月に何度も頭がギューッと締め付けられるように痛くなり、予定を諦めることもありました。セッションを重ねるうちに、その頻度が少しずつ減ってきていると感じています。」</p></div>
+    </details>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-eyebrow">GUIDE</div>
+    <h2>講師紹介</h2>
+    <div class="author">
+      <div class="author-badge"><img src="profile.jpg" alt="講師 hide"></div>
+      <div class="author-text">
+        <strong>hide</strong>
+        受講生の2人に1人がプロの鑑定士としてデビュー。これまでの鑑定実績は1万件以上。著書『副業占い師の教科書』を出版。波動タロットと人生の立て直しをテーマに、福岡を拠点に活動しています。
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-eyebrow">NOTICE</div>
+    <h2 style="font-size:1rem; margin-bottom:16px;">免責事項</h2>
+    <div class="disclaimer">
+      <p>本ページでご紹介している遠隔ヒーリング・瞑想指導は、心身の不調とやわらかく向き合うための一つの方法であり、医療行為ではありません。</p>
+      <p>うつ病をはじめとする精神疾患やその他の疾病の治療・診断を目的とするものではなく、それらの治療の代替にもなりません。心療内科・精神科など医療機関の受診が必要な症状がある方、通院・服薬中の方は、自己判断で治療を中断・変更せず、必ず主治医にご相談のうえでご検討ください。</p>
+      <p>効果には個人差があります。また、宗教団体・特定の思想団体とは一切関係ありません。</p>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="wrap">
+    <div class="section-eyebrow">CONTACT</div>
+    <h2>まずは、無料相談から</h2>
+    <p class="section-lead">顔写真と今の状態を送っていただくだけでOKです。丁寧にお話をうかがい、あなたに合ったプランをご提案します。</p>
+    <a class="btn-line" href="https://lin.ee/WP17gww" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 5.94 2 10.7c0 4.24 3.6 7.8 8.45 8.51.33.07.78.22.9.5.1.26.07.66.03.92l-.15.9c-.04.26-.2 1.02.9.56s5.9-3.48 8.06-5.95C21.6 14.02 22 12.4 22 10.7 22 5.94 17.52 2 12 2z"/></svg>
+      LINEで無料相談する
+    </a>
+  </div>
+  <footer class="site-footer">© Relife 波動タロット</footer>
+</section>
+
+<div class="sticky-bar">
+  <a class="btn-line" href="https://lin.ee/WP17gww" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 5.94 2 10.7c0 4.24 3.6 7.8 8.45 8.51.33.07.78.22.9.5.1.26.07.66.03.92l-.15.9c-.04.26-.2 1.02.9.56s5.9-3.48 8.06-5.95C21.6 14.02 22 12.4 22 10.7 22 5.94 17.52 2 12 2z"/></svg>
+    無料相談はLINEから
+  </a>
+</div>
+
+</body>
+</html>
