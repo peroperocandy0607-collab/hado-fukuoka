@@ -42,6 +42,8 @@
   .hero .lead{ color:var(--text-soft); font-size:.92rem; max-width:520px; margin:0 auto 14px; }
   .hero .lead2{ color:var(--text); font-size:.88rem; max-width:520px; margin:0 auto 30px; }
   .hero svg.aura{ width:200px; height:200px; margin:0 auto 28px; display:block; }
+  .hero-banner{ max-width:380px; margin:0 auto 26px; border-radius:16px; overflow:hidden; border:1px solid var(--border); box-shadow:0 6px 20px var(--shadow); }
+  .hero-banner img{ display:block; width:100%; height:auto; }
   .cta-row{ display:flex; flex-direction:column; gap:10px; align-items:center; }
 
   .btn-line{ display:inline-flex; align-items:center; justify-content:center; gap:8px; background:var(--line-green); color:#fff; font-weight:700; font-size:.98rem; padding:16px 32px; border-radius:30px; text-decoration:none; box-shadow:0 6px 16px rgba(6,199,85,.25); transition:.2s; }
@@ -128,6 +130,7 @@
   @media (max-width:600px){
     section{ padding:40px 0; }
     .hero h1{ font-size:1.5rem; }
+    .hero-banner{ max-width:260px; }
     .pillars{ flex-direction:column; }
     .pillar-plus{ justify-content:center; }
     .diagram{ padding:18px 12px; }
@@ -141,6 +144,7 @@
 <body>
 
 <div class="wrap hero">
+  <div class="hero-banner"><img src="hero.jpg" alt="眠れない夜に、心をひとつずつ拾いなおす。静かに整える時間を、あなたの日常へ。"></div>
   <div class="section-eyebrow">REMOTE HEALING &amp; MEDITATION GUIDE</div>
   <h1>波動・チャクラ調整指南</h1>
   <p class="lead">眠れない夜、抜けない疲れ、晴れない気持ち。薬に頼らず、遠隔ヒーリングと瞑想指導で「整える」に向き合う。</p>
