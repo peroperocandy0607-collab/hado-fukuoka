@@ -20,6 +20,7 @@
     --c1:#c98b7f; --c2:#cf9f68; --c3:#8caa97; --c4:#8b8fc4;
   }
   html{ scroll-behavior:smooth; }
+  @keyframes fadeIn{ from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:translateY(0);} }
   body{
     font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","游ゴシック体",sans-serif;
     background:var(--bg);
@@ -43,7 +44,11 @@
   .hero .tagline{ font-size:1rem; font-weight:600; color:var(--accent); margin-bottom:18px; }
   .hero .lead{ color:var(--text-soft); font-size:.92rem; max-width:520px; margin:0 auto 14px; }
   .hero .lead2{ color:var(--text); font-size:.88rem; max-width:520px; margin:0 auto 30px; }
-  .hero svg.aura{ width:200px; height:200px; margin:0 auto 28px; display:block; }
+  .hero svg.aura{ width:200px; height:200px; margin:0 auto; display:block; transition:filter .2s; }
+  .aura-wrap{ width:200px; margin:0 auto; cursor:pointer; }
+  .aura-wrap:hover .aura{ filter:brightness(1.05); }
+  .aura-hint{ font-size:.78rem; color:var(--text-soft); margin:14px auto 0; max-width:280px; }
+  .aura-result{ font-size:.94rem; font-weight:700; color:var(--text); margin:14px auto 0; max-width:320px; animation:fadeIn .5s ease; }
   .hero-banner{ max-width:380px; margin:0 auto 26px; border-radius:16px; overflow:hidden; border:1px solid var(--border); box-shadow:0 6px 20px var(--shadow); }
   .hero-banner img{ display:block; width:100%; height:auto; }
   .cta-row{ display:flex; flex-direction:column; gap:10px; align-items:center; }
@@ -130,9 +135,12 @@
   footer.site-footer{ text-align:center; padding:32px 0 0; font-size:.72rem; color:var(--text-soft); }
 
   @media (max-width:600px){
+    .wrap{ padding:0 28px; }
     section{ padding:40px 0; }
     .hero h1{ font-size:1.5rem; }
     .hero-banner{ max-width:260px; }
+    .hero .lead, .hero .lead2{ font-size:.86rem; }
+    .hero svg.aura, .aura-wrap{ width:170px; }
     .pillars{ flex-direction:column; }
     .pillar-plus{ justify-content:center; }
     .diagram{ padding:18px 12px; }
@@ -153,25 +161,29 @@
   <p class="lead">眠れない夜、抜けない疲れ、晴れない気持ち。薬に頼らず、遠隔ヒーリングと瞑想指導で「整える」に向き合う。</p>
   <p class="lead2">病院では「異常なし」と言われるのに、不調がずっと続いている。心療内科でお薬をもらったけれど、根本的には何も変わっていない気がする——そんな「どこにも当てはまらない不調」に、波動・チャクラ調整はもう一つの向き合い方を提案します。</p>
 
-  <svg class="aura" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="波動が整った状態を表す、同心円と方位ラインのシンボルマーク">
-    <circle cx="110" cy="110" r="95" fill="none" stroke="var(--border)" stroke-width="1.2"/>
-    <circle cx="110" cy="110" r="70" fill="none" stroke="var(--accent-soft)" stroke-width="1.2"/>
-    <g stroke="var(--accent)" stroke-width="1.1" opacity=".65">
-      <line x1="110" y1="14" x2="110" y2="22"/>
-      <line x1="110" y1="198" x2="110" y2="206"/>
-      <line x1="14" y1="110" x2="22" y2="110"/>
-      <line x1="198" y1="110" x2="206" y2="110"/>
-      <line x1="42.1" y1="42.1" x2="47.8" y2="47.8"/>
-      <line x1="172.2" y1="172.2" x2="177.9" y2="177.9"/>
-      <line x1="177.9" y1="42.1" x2="172.2" y2="47.8"/>
-      <line x1="47.8" y1="172.2" x2="42.1" y2="177.9"/>
-    </g>
-    <circle cx="110" cy="40" r="3" fill="var(--accent)"/>
-    <circle cx="49.4" cy="145" r="2.6" fill="var(--accent)" opacity=".8"/>
-    <circle cx="170.6" cy="145" r="2.6" fill="var(--accent)" opacity=".8"/>
-    <circle cx="110" cy="110" r="14" fill="none" stroke="var(--accent)" stroke-width="1.3"/>
-    <circle cx="110" cy="110" r="4" fill="var(--accent)"/>
-  </svg>
+  <div class="aura-wrap" id="aura-wrap" role="button" tabindex="0" aria-label="色の移り変わりを見つめて、惹かれた瞬間にタップすると波動タイプがわかります">
+    <svg class="aura" id="aura-circle" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="色がゆっくり移り変わる同心円のシンボルマーク">
+      <circle cx="110" cy="110" r="95" fill="none" stroke="var(--border)" stroke-width="1.2"/>
+      <circle cx="110" cy="110" r="70" fill="none" stroke="var(--accent-soft)" stroke-width="1.2"/>
+      <g stroke="var(--gaze-color, var(--accent))" stroke-width="1.1" opacity=".65">
+        <line x1="110" y1="14" x2="110" y2="22"/>
+        <line x1="110" y1="198" x2="110" y2="206"/>
+        <line x1="14" y1="110" x2="22" y2="110"/>
+        <line x1="198" y1="110" x2="206" y2="110"/>
+        <line x1="42.1" y1="42.1" x2="47.8" y2="47.8"/>
+        <line x1="172.2" y1="172.2" x2="177.9" y2="177.9"/>
+        <line x1="177.9" y1="42.1" x2="172.2" y2="47.8"/>
+        <line x1="47.8" y1="172.2" x2="42.1" y2="177.9"/>
+      </g>
+      <circle cx="110" cy="40" r="3" fill="var(--gaze-color, var(--accent))"/>
+      <circle cx="49.4" cy="145" r="2.6" fill="var(--gaze-color, var(--accent))" opacity=".8"/>
+      <circle cx="170.6" cy="145" r="2.6" fill="var(--gaze-color, var(--accent))" opacity=".8"/>
+      <circle cx="110" cy="110" r="14" fill="none" stroke="var(--gaze-color, var(--accent))" stroke-width="1.3"/>
+      <circle cx="110" cy="110" r="4" fill="var(--gaze-color, var(--accent))"/>
+    </svg>
+  </div>
+  <p class="aura-hint" id="aura-hint">色の移り変わりを見つめて、惹かれた瞬間にタップしてください</p>
+  <p class="aura-result" id="aura-result" hidden></p>
 
   <div class="cta-row">
     <a class="btn-line" href="https://lin.ee/WP17gww" target="_blank" rel="noopener">
@@ -561,5 +573,70 @@
   </a>
 </div>
 
+<script>
+(function(){
+  const COLOR_STATES = [
+    { hex:'#b8935a', text:'豊かさと安定を、少しずつ引き寄せているようです。' },
+    { hex:'#c98b7f', text:'今、内側に情熱と行動力が満ちてきています。' },
+    { hex:'#cf9f68', text:'新しいことへの好奇心が、追い風になっている時期です。' },
+    { hex:'#8caa97', text:'心と体の調和を、取り戻しつつあるようです。' },
+    { hex:'#8b8fc4', text:'直感が澄み、静かな気づきが訪れやすい時期です。' }
+  ];
+  const svg = document.getElementById('aura-circle');
+  const wrap = document.getElementById('aura-wrap');
+  const hint = document.getElementById('aura-hint');
+  const resultEl = document.getElementById('aura-result');
+  if (!svg || !wrap) return;
+
+  function hexToRgb(hex){
+    const n = parseInt(hex.slice(1), 16);
+    return { r:(n>>16)&255, g:(n>>8)&255, b:n&255 };
+  }
+  function lerpColor(a, b, t){
+    return `rgb(${Math.round(a.r+(b.r-a.r)*t)},${Math.round(a.g+(b.g-a.g)*t)},${Math.round(a.b+(b.b-a.b)*t)})`;
+  }
+
+  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let index = 0, segStart = null, running = true, rafId = null;
+  const DURATION = 2600;
+
+  function tick(now){
+    if (!running) return;
+    if (segStart === null) segStart = now;
+    const t = Math.min((now - segStart) / DURATION, 1);
+    const from = hexToRgb(COLOR_STATES[index].hex);
+    const to = hexToRgb(COLOR_STATES[(index + 1) % COLOR_STATES.length].hex);
+    svg.style.setProperty('--gaze-color', lerpColor(from, to, t));
+    if (t >= 1) { index = (index + 1) % COLOR_STATES.length; segStart = now; }
+    rafId = requestAnimationFrame(tick);
+  }
+
+  if (reduceMotion) {
+    svg.style.setProperty('--gaze-color', COLOR_STATES[0].hex);
+  } else {
+    rafId = requestAnimationFrame(tick);
+  }
+
+  function reveal(){
+    running = false;
+    if (rafId) cancelAnimationFrame(rafId);
+    resultEl.textContent = COLOR_STATES[index].text;
+    resultEl.hidden = false;
+    hint.hidden = true;
+  }
+  function reset(){
+    resultEl.hidden = true;
+    hint.hidden = false;
+    running = true;
+    segStart = null;
+    rafId = requestAnimationFrame(tick);
+  }
+
+  wrap.addEventListener('click', () => { running ? reveal() : reset(); });
+  wrap.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); running ? reveal() : reset(); }
+  });
+})();
+</script>
 </body>
 </html>
